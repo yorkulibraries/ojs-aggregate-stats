@@ -169,13 +169,13 @@ do
     count=$(( $count + 1 ))
 done
 
-#This just grabs the first three lines from the first downloaded csv to grab the headers and such, to give the final report some context.
+#This just grabs the first three lines from the first downloaded csv to grab the headers and such, to give the final report some context. If you have a different kind of stats report, you might have to change this to get the right part of the head.
 head -n3 /tmp/ojs/caml.csv > /tmp/test1.csv
 
 #This grabs the last line of each csv -- the line with the data, if there is any -- and collects it into one file.
 tail -n 1 /tmp/ojs/*.csv > /tmp/test2.csv
 
-#This combines the two tmp files generated above and combines them into the final report.
+#This combines the two tmp files generated above and combines them into the final report. Even if you are using this to aggregate a different type of custom report, this should be fine, since it grabs the last line.
 cat /tmp/test1.csv /tmp/test2.csv > OJS-monthly-download-stats_$month.csv
 
 #The resulting CSV will be in the same directory as the script, with all additional files in the tmp directory. Obviously, this assumes a *nix computing environment, since I have no idea where the tmp directory is on Windows (or Macs, if not the same). The easiest way to change this would be to make the path the current directory.
