@@ -170,10 +170,16 @@ do
 done
 
 #This just grabs the first three lines from the first downloaded csv to grab the headers and such, to give the final report some context. If you have a different kind of stats report, you might have to change this to get the right part of the head.
-head -n3 /tmp/ojs/caml.csv > /tmp/test1.csv
+head -n3 /tmp/ojs/${journal_name[0]}.csv > /tmp/test1.csv
 
 #This grabs the last line of each csv -- the line with the data, if there is any -- and collects it into one file.
-tail -n 1 /tmp/ojs/*.csv > /tmp/test2.csv
+> /tmp/test2.csv
+for i in /tmp/ojs/*.csv
+do
+    name=$(basename $i .csv)
+    data=$(tail -n 1 $i) 
+    echo "$name$data" >> /tmp/test2.csv
+done
 
 #This combines the two tmp files generated above and combines them into the final report. Even if you are using this to aggregate a different type of custom report, this should be fine, since it grabs the last line.
 cat /tmp/test1.csv /tmp/test2.csv > OJS-monthly-download-stats_$month.csv
