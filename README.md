@@ -10,7 +10,7 @@ Note that this script makes use of a URL created by the OJS Report generator. Yo
 
 See [OJS Report Generator](https://docs.google.com/document/d/1EWbZXA_hIDJbB9F_XexepLKFVA1_xbiZu7EvUTcV1gc/edit?usp=sharing) for instructions on how to work with the OJS Report generator.  And for added context, refer to the Report Generation section of [PKP Statistics Framework](http://pkp.sfu.ca/wiki/index.php?title=PKP_Statistics_Framework).
 
-** Requirements:** This only needs a bash shell.
+**Requirements:** This only needs a bash shell.
 
 # Licensing
 
