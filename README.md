@@ -1,18 +1,17 @@
 A collection of various helper scripts we use to interact with OJS.
 
-##Description of scripts
+# Scripts
 
-###aggregate-ojs-download-stats.sh
+## aggregate-ojs-download-stats.sh
 
-YorkU's current OJS setup is multiple installations of OJS (one for each journal). However, since we administer them as a whole, we wanted a way to automate and aggregate the download stats for each journal. That is what this script does.
+York U's current [OJS](https://pkp.sfu.ca/ojs/) setup ([York Digital Journals](http://ydj.journals.yorku.ca/index.php/ydj)) is multiple installations of OJS (one for each journal). However, since we administer them as a whole, we wanted a way to automate and aggregate the download stats for each journal. That is what this script does.
 
 Note that this script makes use of a URL created by the OJS Report generator. You can simply copy the pattern as presented in the code, but if you'd like to modify the code to aggregate different types of statistics, you can create your own URLs by using the OJS Report Generator in your own OJS install.
-See this document for instructions on how to work with the OJS Report generator: https://docs.google.com/document/d/1EWbZXA_hIDJbB9F_XexepLKFVA1_xbiZu7EvUTcV1gc/edit?usp=sharing
-And for added context, refer to the Report Generation section of this document: 
-http://pkp.sfu.ca/wiki/index.php?title=PKP_Statistics_Framework
 
-**Requirements:** This only needs a bash shell (any version which supports arrays).
+See [OJS Report Generator](https://docs.google.com/document/d/1EWbZXA_hIDJbB9F_XexepLKFVA1_xbiZu7EvUTcV1gc/edit?usp=sharing) for instructions on working with the generator.  And for added context, refer to the Report Generation section of [PKP Statistics Framework](http://pkp.sfu.ca/wiki/index.php?title=PKP_Statistics_Framework).
 
-##Licensing
+**Requirements:** This only needs a bash shell.
 
-Because these scripts don't represent parts of a single program, each script contains the license for its use at the end of the script. 
+# Licensing
+
+Because these scripts don't represent parts of a single program, each script contains the license for its use at the end of the script.
