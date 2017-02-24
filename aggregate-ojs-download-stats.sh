@@ -32,6 +32,11 @@
 
 JOURNAL_LIST="ojs-journals.csv"
 
+# Knowing the full path to this script (and hence the list of journals) means it can be
+# called from another directory.
+JOURNAL_LIST_PATH=`dirname $0`
+JOURNAL_LIST_PATH+="/${JOURNAL_LIST}"
+
 # OJS admin username and password
 #
 # It's safest to set these up as environment variables,
@@ -98,7 +103,7 @@ do
     then
 	echoerr "ERROR: wget could not download from $JOURNAL"
     fi
-done < $JOURNAL_LIST
+done < $JOURNAL_LIST_PATH
 
 # Grab the last line of each CSV---the line with the data, if there is any---and collect it into one file.
 echo "journal,month,downloads"
